@@ -155,6 +155,10 @@ export default function TranslationTable({
                                                     size="small"
                                                     fullWidth
                                                     multiline
+                                                    inputProps={{
+                                                        'data-key': string.key,
+                                                        'data-lang': lang,
+                                                    }}
                                                     onKeyPress={e => {
                                                         if (e.key === 'Enter' && !e.shiftKey) {
                                                             e.preventDefault();
@@ -167,17 +171,16 @@ export default function TranslationTable({
                                                     }}
                                                 />
                                                 <IconButton
-                                                    onClick={() =>
-                                                        handleSave(
-                                                            string.key,
-                                                            lang,
-                                                            (
-                                                                document.querySelector(
-                                                                    `input[data-key="${string.key}"][data-lang="${lang}"]`
-                                                                ) as HTMLInputElement
-                                                            ).value
-                                                        )
-                                                    }
+                                                    onClick={() => {
+                                                        const selector = `textarea[data-key="${string.key}"][data-lang="${lang}"]`;
+                                                        const el = document.querySelector(selector) as HTMLTextAreaElement | null;
+                                                        if (!el) {
+                                                            // element not found — avoid throwing and log for debugging
+                                                            console.warn('Input not found for selector:', selector);
+                                                            return;
+                                                        }
+                                                        handleSave(string.key, lang, el.value);
+                                                    }}
                                                 >
                                                     <SaveIcon />
                                                 </IconButton>
