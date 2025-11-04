@@ -143,7 +143,7 @@ export default function Home() {
         <Container maxWidth="lg" sx={{ py: 4 }}>
             <Box sx={{ mb: 4 }}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                    Android Strings Translator
+                    Android strings.xml translator
                 </Typography>
                 <Typography variant="body1" color="text.secondary" paragraph>
                     Upload your Android strings.xml file, select target languages, and get AI-powered translations

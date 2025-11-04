@@ -45,7 +45,7 @@ A modern, web-based tool built with Next.js that supports multilingual translati
 - Run `npm install` to install dependencies
 - Run `npm build` to build project
 - Run `npm start` to run project at localhost
-- Visit `https://localhost:3000/`
+- Visit `http://localhost:3000/`
 
 ---
 

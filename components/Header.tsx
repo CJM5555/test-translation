@@ -9,7 +9,7 @@ export default function Header() {
             <Toolbar>
                 <TranslateIcon sx={{ mr: 2 }} />
                 <Typography variant="h6" component="div">
-                    Android Strings.xml Translator
+                    Android strings.xml translator
                 </Typography>
             </Toolbar>
         </AppBar>

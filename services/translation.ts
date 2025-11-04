@@ -1,6 +1,6 @@
 import { StringResource } from "../types";
 
-// Azure Translator configuration
+// Azure translator configuration
 const AZURE_TRANSLATOR_ENDPOINT =
   process.env.AZURE_TRANSLATOR_ENDPOINT ||
   "https://api.cognitive.microsofttranslator.com";
@@ -15,7 +15,7 @@ const AZURE_KEY_VALID = Boolean(
 if (!AZURE_KEY_VALID) {
   // Log a helpful message to the server console (do not print the key itself).
   console.error(
-    "Azure Translator key is missing or appears invalid. Set AZURE_TRANSLATOR_KEY in .env.local with your Translator resource key and restart the dev server."
+    "Azure translator key is missing or appears invalid. Set AZURE_TRANSLATOR_KEY in .env.local with your translator resource key and restart the dev server."
   );
 }
 
@@ -75,7 +75,7 @@ async function azureTranslateBatch(
   // If the key isn't valid, fail here so the caller (API route) can return a structured error
   if (!AZURE_KEY_VALID) {
     const msg =
-      "Missing or invalid Azure Translator key. Set AZURE_TRANSLATOR_KEY in .env.local with your Translator resource key and restart the dev server.";
+      "Missing or invalid Azure translator key. Set AZURE_TRANSLATOR_KEY in .env.local with your translator resource key and restart the dev server.";
     console.error(msg);
     return { success: false, error: msg };
   }
@@ -127,7 +127,7 @@ async function azureTranslateBatch(
     // Handle other errors
     if (!res.ok) {
       const txt = await res.text();
-      const msg = `Azure Translator error ${res.status}: ${txt}`;
+      const msg = `Azure translator error ${res.status}: ${txt}`;
       console.error(msg);
       return { success: false, error: msg };
     }
