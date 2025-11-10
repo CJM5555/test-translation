@@ -44,6 +44,9 @@ export default function RootLayout({
 
     return (
         <html lang="en">
+            <head>
+                <meta name="google-site-verification" content="P3RlTB9pjMDLt1iw8492kNzBgmnVhwJyr-I9sk4JW2E" />
+            </head>
             {isClient ? (
                 <body suppressHydrationWarning={true}>
                     <ThemeProvider theme={theme}>
